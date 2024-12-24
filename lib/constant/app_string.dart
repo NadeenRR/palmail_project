@@ -1,0 +1,107 @@
+class AppString {
+  static const String login = "login";
+  static const String signUp = "signUp";
+  static const String enterEmail = "enter_email";
+  static const String password = "password";
+  static const String tags = "tags";
+  static const String nameApp = "name_app";
+  static const String language = "language";
+  static const String logout = "logout";
+  static const String manageUser = "manage_user";
+  static const String home = "home";
+  static const String profile = "profile";
+  static const String senders = "senders";
+  static const String archive = "archive";
+  static const String allUsers = "all_user";
+  static const String allTags = "all_tags";
+  static const String profilePage = "profile_page";
+  static const String userUpdate = "user_update";
+  static const String done = "done";
+  static const String lang = "lang";
+
+  static const String loading = "loading";
+  static const String selectSameRole = "select_same_role";
+  static const String mustSelectRole = "must_select_role";
+  static const String mustSelectCat = "must_select_category";
+  static const String guest = "guest";
+  static const String user = "user";
+  static const String editor = "editor";
+  static const String editProfile = "edit_profile";
+  static const String admin = "admin";
+  static const String changeRole = "change_role";
+  static const String userName = "user_name";
+  static const String senderMails = "sender_mails";
+
+  static const String cancel = "cancel";
+
+  static const String search = "search";
+  static const String other = "other";
+  static const String officialOrganizations = "official_organizations";
+  static const String NGOs = "NGOs";
+  static const String foreign = "foreign";
+  static const String filters = "filters";
+  static const String show = "show";
+
+  static const String cancelFilter = "cancel_filter";
+  static const String inBox = "inBox";
+  static const String pending = "pending";
+  static const String inProgress = "in_Progress";
+  static const String completed = "completed";
+  static const String fromDate = "fromDate";
+  static const String toDate = "toDate";
+
+  static const String mustSelectTags = "must_select_tags";
+  static const String dismiss = "dismiss";
+  static const String addNewTag = "add_new_tag";
+  static const String newInbox = "new_inbox";
+  static const String phoneNumber = "phone_number";
+  static const String category = "category";
+  static const String description = "description";
+
+  static const String anyName = "any_name";
+  static const String nothingIsSelected = "nothing_is_Selected";
+  static const String titleMail = "title_mail";
+  static const String mustFillSender = "must_fill_sender";
+  static const String mustFillPhone = "must_fill_phone";
+  static const String mustFillTitle = "must_fill_title";
+  static const String mustFillDate = "must_fill_date";
+  static const String mustFillArchiveNumber = "must_fill_arch_number";
+  static const String status = "status";
+  static const String addStatus = "add_status";
+  static const String details = "details";
+  static const String mailUpdated = "mail_updated";
+  static const String arch = "arch";
+  static const String deleteMail = "delete_mail";
+  static const String addNewActivity = "add_new_activity …";
+  static const String noName = "no_name";
+  static const String activity = "activity";
+  static const String imageDeleted = "image_deleted";
+  static const String addImage = "add_image";
+  static const String finalDecision = "final_decision";
+  static const String decision = "Decision";
+  static const String enterName = "enter_name";
+  static const String confirmPassword = "confirm_password";
+  static const String registerSuccessfully = " register_successfully";
+  static const String loginSuccessfully = "login_successfully";
+  static const String deleteArchivedMails = "delete_archived_mails?";
+  static const String confirmDeleteArchive = "confirm_delete_archive";
+  static const String archivedMails = "archived_mails";
+  static const String registerFailed = "register_failed";
+  static const String archiveNumber = "archive_number";
+  static const String addDecision = "add_decision";
+  static const String activities = "activities";
+  static const String mailAlreayArchive = "mail_already_archive";
+  static const String mailSuccessArchive = "mail_success_archive";
+  static const String share = "share";
+  static const String image = "image";
+  static const String logoutSuccess = "logout_success";
+  static const String chnagePassword = "change_password";
+  static const String chnage = "change";
+  static const String newPassword = "new_password";
+  static const String logoutFailed = "logout_failed";
+  static const String invalidFailed = "invalid_credinals";
+
+  static const String errorUpdate = "error_update";
+  static const String confirmPass = "confirm_pass";
+  static const String passUpdate = "pass_update";
+}
