@@ -36,7 +36,7 @@ class _AddNewInboxWidgetState extends State<AddNewInboxWidget> {
       child: Row(children: [
         const Icon(
           CupertinoIcons.add_circled_solid,
-          color: Color(0xff6589ff),
+          color: Color(0xff003AFC),
         ),
         const SizedBox(
           width: 8,
@@ -45,7 +45,7 @@ class _AddNewInboxWidgetState extends State<AddNewInboxWidget> {
           AppString.newInbox.tr(),
           style: GoogleFonts.poppins(
             fontSize: 18,
-            color: const Color(0xff6589ff),
+            color: const Color(0xff003AFC),
             fontWeight: FontWeight.w600,
           ),
         ),

@@ -42,11 +42,11 @@ class Mail {
   int? id;
   String? subject;
   String? description;
-  String? senderId;
+  int? senderId;
   String? archiveNumber;
   DateTime? archiveDate;
   String? decision;
-  String? statusId;
+  int? statusId;
   String? finalDecision;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -79,11 +79,11 @@ class Mail {
     int? id,
     String? subject,
     String? description,
-    String? senderId,
+    int? senderId,
     String? archiveNumber,
     DateTime? archiveDate,
     String? decision,
-    String? statusId,
+    int? statusId,
     String? finalDecision,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -173,8 +173,8 @@ class Mail {
 class Activity {
   int? id;
   String? body;
-  String? userId;
-  String? mailId;
+  int? userId;
+  int? mailId;
   dynamic sendNumber;
   dynamic sendDate;
   dynamic sendDestination;
@@ -196,8 +196,8 @@ class Activity {
   Activity copyWith({
     int? id,
     String? body,
-    String? userId,
-    String? mailId,
+    int? userId,
+    int? mailId,
     dynamic sendNumber,
     dynamic sendDate,
     dynamic sendDestination,
@@ -250,7 +250,7 @@ class Sender {
   String? name;
   String? mobile;
   dynamic address;
-  String? categoryId;
+  int? categoryId;
   DateTime? createdAt;
   DateTime? updatedAt;
   Status? category;
@@ -271,7 +271,7 @@ class Sender {
     String? name,
     String? mobile,
     dynamic address,
-    String? categoryId,
+    int? categoryId,
     DateTime? createdAt,
     DateTime? updatedAt,
     Status? category,
@@ -373,8 +373,8 @@ class Status {
 }
 
 class Pivot {
-  String? mailId;
-  String? tagId;
+  int? mailId;
+  int? tagId;
 
   Pivot({
     this.mailId,
@@ -382,8 +382,8 @@ class Pivot {
   });
 
   Pivot copyWith({
-    String? mailId,
-    String? tagId,
+    int? mailId,
+    int? tagId,
   }) =>
       Pivot(
         mailId: mailId ?? this.mailId,

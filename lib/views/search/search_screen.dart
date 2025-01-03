@@ -343,7 +343,7 @@ class _SearchScreenState extends State<SearchScreen>
                                                         return CircleAvatar(
                                                           backgroundImage:
                                                               NetworkImage(
-                                                            'https://palmail.gsgtt.tech/storage/${attachment.image}',
+                                                            'http://palmail.gazawar.wiki/${attachment.image}',
                                                           ),
                                                           radius: 16,
                                                         );

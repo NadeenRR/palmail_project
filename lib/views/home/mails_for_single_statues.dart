@@ -156,7 +156,9 @@ class _MailsForSingleStatuesState extends State<MailsForSingleStatues> {
                                               email.sender?.name ?? '',
                                           subTitle: email.description ?? '',
                                           subject: email.subject ?? '',
-                                          tag: '',
+                                          tag:email.tags!.map((e) => e.name)
+                                              .toList()
+                                              .join(' #') ?? '',
                                           imageList: SizedBox(
                                             height: 50,
                                             child: ListView.builder(
@@ -172,7 +174,7 @@ class _MailsForSingleStatuesState extends State<MailsForSingleStatues> {
                                                           attachmentIndex];
 
                                                   final imageUrl =
-                                                      'https://palmail.gsgtt.tech/storage/${attachment?.image}';
+                                                      'http://palmail.gazawar.wiki/${attachment?.image}';
                                                   return Container(
                                                     margin:
                                                         const EdgeInsets.only(

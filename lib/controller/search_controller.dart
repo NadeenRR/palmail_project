@@ -16,8 +16,9 @@ class SearchRepository {
       });
 
       final mailResponse = MailResponse.fromJson(response);
-
+      print('API Response: $mailResponse' );
       if (mailResponse.mails != null && mailResponse.mails!.isNotEmpty) {
+      print('API Response: ${mailResponse.mails}');
         return mailResponse.mails;
       } else {
         print('No Mails Found');

@@ -42,7 +42,7 @@ class StatusModal {
   String? color;
   DateTime? createdAt;
   DateTime? updatedAt;
-  String? mailsCount;
+  int? mailsCount;
 
   StatusModal({
     this.id,
@@ -59,7 +59,7 @@ class StatusModal {
     String? color,
     DateTime? createdAt,
     DateTime? updatedAt,
-    String? mailsCount,
+    int? mailsCount,
   }) =>
       StatusModal(
         id: id ?? this.id,

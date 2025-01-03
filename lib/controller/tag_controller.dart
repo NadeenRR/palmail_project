@@ -1,5 +1,5 @@
 
-import 'package:palmail_project/models/tags_model.dart';
+import '../models/tags_model.dart';
 
 import '../services/api_helper.dart';
 import '../services/api_response.dart';

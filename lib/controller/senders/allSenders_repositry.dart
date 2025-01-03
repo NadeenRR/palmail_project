@@ -18,6 +18,7 @@ class AllSendersRep {
       '/senders?mail=false',
       {'Authorization': 'Bearer $token'},
     );
+    print('Response: $response');
     for (int i = 0;
         i < AllSenders.fromJson(response).senders!.data!.length;
         i++) {

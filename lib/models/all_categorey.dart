@@ -35,7 +35,7 @@ class CategoryElement {
   final Name? name;
   final DateTime? createdAt;
   final DateTime? updatedAt;
-  final String? sendersCount;
+  final int? sendersCount;
   final List<Sender>? senders;
 
   CategoryElement({
@@ -90,7 +90,7 @@ class Sender {
   final String? name;
   final String? mobile;
   final String? address;
-  final String? categoryId;
+  final int? categoryId;
   final DateTime? createdAt;
   final DateTime? updatedAt;
   final SenderCategory? category;

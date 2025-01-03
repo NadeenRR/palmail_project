@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:palmail_project/controller/user_controller.dart';
-
+import '../controller/user_controller.dart';
 import '../models/user_info.dart';
 
 class UserProvider extends ChangeNotifier {

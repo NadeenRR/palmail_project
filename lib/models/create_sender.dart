@@ -47,10 +47,10 @@ class Sender {
   String? name;
   String? mobile;
   dynamic address;
-  String? categoryId;
+  int? categoryId;
   DateTime? createdAt;
   DateTime? updatedAt;
-  String? mailsCount;
+  int? mailsCount;
   Category? category;
 
   Sender({
@@ -70,10 +70,10 @@ class Sender {
     String? name,
     String? mobile,
     dynamic address,
-    String? categoryId,
+    int? categoryId,
     DateTime? createdAt,
     DateTime? updatedAt,
-    String? mailsCount,
+    int? mailsCount,
     Category? category,
   }) =>
       Sender(

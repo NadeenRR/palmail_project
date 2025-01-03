@@ -122,7 +122,7 @@ class _senderMailsScreenState extends State<senderMailsScreen> {
                                     final attachment =
                                         mail?.attachments![attachmentIndex];
                                     final imageUrl =
-                                        'https://palmail.gsgtt.tech/storage/${attachment.image}';
+                                        'http://palmail.gazawar.wiki/${attachment.image}';
                                     return Container(
                                       margin: const EdgeInsets.only(right: 8),
                                       height: size.height / 20,

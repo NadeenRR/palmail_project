@@ -1,6 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';import 'package:palmail_project/views/auth/login.dart';
+import 'package:flutter/material.dart';
+import 'package:palmail_project/views/auth/login.dart';
 import 'package:palmail_project/views/auth/signup.dart';
+// import 'package:palmailnadeenflutter327/views/auth/login.dart';
+// import 'package:palmailnadeenflutter327/views/auth/signup.dart';
 import '../../constant/app_assets.dart';
 import '../../constant/app_color.dart';
 import '../../constant/app_string.dart';
@@ -60,17 +63,21 @@ class _AuthScreenState extends State<AuthScreen>
                 ),
                 child: SingleChildScrollView(
                   child: Column(children: [
+                    const SizedBox(
+                      height: 18,
+                    ),
                     Image.asset(
                       AppAssets.logoApp,
                       width: double.infinity,
                       height: 150,
                     ),
-                    const Text('ديوان رئيس الوزراء',
-                        style: TextStyle(
-                          fontFamily: 'Andalus',
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
+                    const Text(
+                      'ديوان رئيس الوزراء',
+                      style: TextStyle(
+                        fontFamily: 'Andalus',
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
                     ),
                     const SizedBox(
                       height: 12,

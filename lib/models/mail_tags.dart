@@ -40,7 +40,7 @@ class Sender {
   String? name;
   String? mobile;
   dynamic address;
-  String? categoryId;
+  int? categoryId;
   DateTime? createdAt;
   DateTime? updatedAt;
   Tag? category;
@@ -61,7 +61,7 @@ class Sender {
     String? name,
     String? mobile,
     dynamic address,
-    String? categoryId,
+    int? categoryId,
     DateTime? createdAt,
     DateTime? updatedAt,
     Tag? category,
@@ -111,7 +111,7 @@ class User {
   Email? email;
   Image? image;
   dynamic emailVerifiedAt;
-  String? roleId;
+  int? roleId;
   DateTime? createdAt;
   DateTime? updatedAt;
   Tag? role;
@@ -134,7 +134,7 @@ class User {
     Email? email,
     Image? image,
     dynamic emailVerifiedAt,
-    String? roleId,
+    int? roleId,
     DateTime? createdAt,
     DateTime? updatedAt,
     Tag? role,
@@ -183,8 +183,8 @@ class User {
 class Activity {
   int? id;
   Body? body;
-  String? userId;
-  String? mailId;
+  int? userId;
+  int? mailId;
   dynamic sendNumber;
   dynamic sendDate;
   dynamic sendDestination;
@@ -208,8 +208,8 @@ class Activity {
   Activity copyWith({
     int? id,
     Body? body,
-    String? userId,
-    String? mailId,
+    int? userId,
+    int? mailId,
     dynamic sendNumber,
     dynamic sendDate,
     dynamic sendDestination,
@@ -265,11 +265,11 @@ class Mail {
   int? id;
   String? subject;
   String? description;
-  String? senderId;
+  int? senderId;
   String? archiveNumber;
   DateTime? archiveDate;
   String? decision;
-  String? statusId;
+  int? statusId;
   String? finalDecision;
   DateTime? createdAt;
   DateTime? updatedAt;
@@ -304,11 +304,11 @@ class Mail {
     int? id,
     String? subject,
     String? description,
-    String? senderId,
+    int? senderId,
     String? archiveNumber,
     DateTime? archiveDate,
     String? decision,
-    String? statusId,
+    int? statusId,
     String? finalDecision,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -510,7 +510,7 @@ class Attachment {
   int? id;
   String? title;
   String? image;
-  String? mailId;
+  int? mailId;
   DateTime? createdAt;
   DateTime? updatedAt;
 
@@ -527,7 +527,7 @@ class Attachment {
     int? id,
     String? title,
     String? image,
-    String? mailId,
+    int? mailId,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) =>
@@ -564,8 +564,8 @@ class Attachment {
 }
 
 class Pivot {
-  String? tagId;
-  String? mailId;
+  int? tagId;
+  int? mailId;
 
   Pivot({
     this.tagId,
@@ -573,8 +573,8 @@ class Pivot {
   });
 
   Pivot copyWith({
-    String? tagId,
-    String? mailId,
+    int? tagId,
+    int? mailId,
   }) =>
       Pivot(
         tagId: tagId ?? this.tagId,

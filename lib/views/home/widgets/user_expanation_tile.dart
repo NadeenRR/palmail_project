@@ -36,14 +36,14 @@ class _CategoryExpansionTileState extends State<CategoryExpansionTile> {
       tilePadding: EdgeInsets.zero,
       title: Text(
         widget.subTitle!,
-        style: TextStyle(
+        style:const  TextStyle(
           fontSize: 14,
           color: const Color(0xff6589ff),
         ),
       ),
       leading: Text(
         widget.subject!,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
           color: const Color(0xff272727),
           fontWeight: FontWeight.w600,
@@ -56,16 +56,28 @@ class _CategoryExpansionTileState extends State<CategoryExpansionTile> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 24),
+                padding: const EdgeInsets.only(left: 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     for (int i = 0; i < widget.names!.length; i++) ...{
                       Row(
                         children: [
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundColor: AppColors.primaryColor,
+                            child: Text(
+                              widget.names![i].name![0],
+                              style: const TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
                           Text(
                             '${widget.names![i].name}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 18,
                             ),
                           ),
@@ -85,7 +97,7 @@ class _CategoryExpansionTileState extends State<CategoryExpansionTile> {
                                 // id_new[1] = widget.names![i].id;
                               });
                             },
-                            icon: Icon(Icons.edit),
+                            icon: const Icon(Icons.edit),
                           )
                         ],
                       )

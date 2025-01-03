@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../../constant/app_assets.dart';
-import 'package:rive/rive.dart';
 
 class MenuBtn extends StatelessWidget {
   const MenuBtn({
     super.key,
     required this.onTap,
-    required this.riveInit,
+    // required this.riveInit,
   });
 
   final VoidCallback onTap;
-  final ValueChanged<Artboard> riveInit;
+  // final ValueChanged<Artboard> riveInit;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +32,11 @@ class MenuBtn extends StatelessWidget {
             color: Colors.white,
             shape: BoxShape.circle,
           ),
-          child: RiveAnimation.asset(
-            AppAssets.menuAnimated,
-            onInit: riveInit,
-          ),
+          child: CircularProgressIndicator(),
+          // child: RiveAnimation.asset(
+          //   AppAssets.menuAnimated,
+          //   onInit: riveInit,
+          // ),
         ),
       ),
     );

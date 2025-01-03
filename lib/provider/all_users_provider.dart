@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:palmail_project/controller/all_users_controller.dart';
+import '../controller/all_users_controller.dart';
 
 import '../models/all_users.dart';
 

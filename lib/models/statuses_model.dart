@@ -98,7 +98,7 @@ class StatusElement {
   String? color;
   String? createdAt;
   String? updatedAt;
-  String? mailsCount;
+  int? mailsCount;
   List<Mail>? mails;
 
   StatusElement({
@@ -140,11 +140,11 @@ class Mail {
   int? id;
   String? subject;
   String? description;
-  String? senderId;
+  int? senderId;
   String? archiveNumber;
   String? archiveDate;
   String? decision;
-  String? statusId;
+  int? statusId;
   String? finalDecision;
   String? createdAt;
   String? updatedAt;
@@ -230,8 +230,8 @@ class Mail {
 class Activity {
   int? id;
   String? body;
-  String? userId;
-  String? mailId;
+  int? userId;
+  int? mailId;
   String? sendNumber;
   dynamic sendDate;
   dynamic sendDestination;
@@ -285,7 +285,7 @@ class User {
   String? email;
   String? image;
   String? emailVerifiedAt;
-  String? roleId;
+  int? roleId;
   String? createdAt;
   String? updatedAt;
 
@@ -327,7 +327,7 @@ class Attachment {
   int? id;
   String? title;
   String? image;
-  String? mailId;
+  int? mailId;
   String? createdAt;
   String? updatedAt;
 
@@ -364,7 +364,7 @@ class Sender {
   String? name;
   String? mobile;
   String? address;
-  String? categoryId;
+  int? categoryId;
   String? createdAt;
   String? updatedAt;
   Category? category;
@@ -482,8 +482,8 @@ class Tag {
 }
 
 class Pivot {
-  String? mailId;
-  String? tagId;
+  int? mailId;
+  int? tagId;
 
   Pivot({
     this.mailId,

@@ -23,10 +23,13 @@ class AllSenders {
         senders: senders ?? this.senders,
       );
 
-  factory AllSenders.fromJson(Map<String, dynamic> json) => AllSenders(
-        senders:
-            json["senders"] == null ? null : Senders.fromJson(json["senders"]),
-      );
+  factory AllSenders.fromJson(Map<String, dynamic> json) {
+    print(json);
+    return AllSenders(
+      senders:
+          json["senders"] == null ? null : Senders.fromJson(json["senders"]),
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "senders": senders?.toJson(),
@@ -94,25 +97,33 @@ class Senders {
         total: total ?? this.total,
       );
 
-  factory Senders.fromJson(Map<String, dynamic> json) => Senders(
-        currentPage: json["current_page"],
-        data: json["data"] == null
-            ? []
-            : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
-        firstPageUrl: json["first_page_url"],
-        from: json["from"],
-        lastPage: json["last_page"],
-        lastPageUrl: json["last_page_url"],
-        links: json["links"] == null
-            ? []
-            : List<Link>.from(json["links"]!.map((x) => Link.fromJson(x))),
-        nextPageUrl: json["next_page_url"],
-        path: json["path"],
-        perPage: json["per_page"],
-        prevPageUrl: json["prev_page_url"],
-        to: json["to"],
-        total: json["total"],
-      );
+  factory Senders.fromJson(dynamic json) {
+    print(json.runtimeType);
+    bool isList = json is List;
+    if (isList) {
+      return Senders(
+          data: List<Datum>.from(json.map((x) => Datum.fromJson(x))));
+    }
+    return Senders(
+      currentPage: json["current_page"],
+      data: json["data"] == null
+          ? []
+          : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+      firstPageUrl: json["first_page_url"],
+      from: json["from"],
+      lastPage: json["last_page"],
+      lastPageUrl: json["last_page_url"],
+      links: json["links"] == null
+          ? []
+          : List<Link>.from(json["links"]!.map((x) => Link.fromJson(x))),
+      nextPageUrl: json["next_page_url"],
+      path: json["path"],
+      perPage: json["per_page"],
+      prevPageUrl: json["prev_page_url"],
+      to: json["to"],
+      total: json["total"],
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "current_page": currentPage,
@@ -140,10 +151,10 @@ class Datum {
   String? name;
   String? mobile;
   String? address;
-  String? categoryId;
+  int? categoryId;
   DateTime? createdAt;
   DateTime? updatedAt;
-  String? mailsCount;
+  int? mailsCount;
   Category? category;
   List<Mail>? mails;
 
@@ -164,10 +175,10 @@ class Datum {
           String? name,
           String? mobile,
           String? address,
-          String? categoryId,
+          int? categoryId,
           DateTime? createdAt,
           DateTime? updatedAt,
-          String? mailsCount,
+          int? mailsCount,
           Category? category,
           List<Mail>? mails}) =>
       Datum(
@@ -324,7 +335,7 @@ class Mail {
   int? id;
   String? subject;
   String? description;
-  String? senderId;
+  int? senderId;
   String? archiveNumber;
   String? archiveDate;
 

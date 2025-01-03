@@ -30,11 +30,16 @@ class _ManageSceenState extends State<ManageSceen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          AppString.manageUser.tr(),
-        ),
-      ),
+          centerTitle: true,
+          title: Text(
+            AppString.manageUser.tr(),
+          ),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back_ios),
+          )),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -111,12 +116,12 @@ class _ManageSceenState extends State<ManageSceen> {
                       child: Shimmer.fromColors(
                         baseColor: Colors.grey.shade300,
                         highlightColor: Colors.grey.shade700,
-                        child: Container(
+                        child: SizedBox(
                           width: 400,
                           height: 600,
                           child: ListView.builder(
                             shrinkWrap: true,
-                            itemCount: 4, // Replace with your actual item count
+                            itemCount: 3, // Replace with your actual item count
                             itemBuilder: (context, index) {
                               return ExpansionTile(
                                 shape: const Border(
@@ -133,7 +138,7 @@ class _ManageSceenState extends State<ManageSceen> {
                                   child: Text(
                                     AppString.loading.tr(),
                                     // Replace with your actual title
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Colors.cyan,
                                     ),
                                   ),
@@ -147,6 +152,92 @@ class _ManageSceenState extends State<ManageSceen> {
                     ),
                   );
                 }
+                // if (UserProvider.getRoles.status == ApiStatus.COMPLETED) {
+                //   return SingleChildScrollView(
+                //     child: Padding(
+                //       padding: const EdgeInsets.all(8.0),
+                //       child: SearchUser == ''
+                //           ? Column(
+                //               children: [
+                //                 for (int i = 0;
+                //                     i < UserProvider.getRoles.data!.length;
+                //                     i++) ...{
+                //                   CategoryExpansionTile(
+                //                     subject:
+                //                         '${UserProvider.getRoles.data![i].name![0].toUpperCase()}${UserProvider.getRoles.data![i].name!.substring(1)}',
+                //                     subTitle:
+                //                         '${UserProvider.getRoles.data![i].usersCount}',
+                //                     names: UserProvider.getRoles.data![i].users,
+                //                     id_role: UserProvider.getRoles.data![i].id,
+                //                   )
+                //                 }
+                //               ],
+                //             )
+                //           : SingleChildScrollView(
+                //               child: Column(
+                //                 children: [
+                //                   for (int s = 0;
+                //                       s < UserProvider.getRoles.data!.length;
+                //                       s++) ...{
+                //                     for (int d = 0;
+                //                         d <
+                //                             UserProvider.getRoles.data![s]
+                //                                 .users!.length;
+                //                         d++) ...{
+                //                       if (UserProvider
+                //                           .getRoles.data![s].users![d].name!
+                //                           .contains(_searchUser.text)) ...{
+                //                         Padding(
+                //                           padding: const EdgeInsets.all(8.0),
+                //                           child: Row(
+                //                             children: [
+                //                               Text(
+                //                                 '${UserProvider.getRoles.data![s].users![d].name}',
+                //                                 style: const TextStyle(
+                //                                   fontSize: 18,
+                //                                 ),
+                //                               ),
+                //                               Spacer(),
+                //                               IconButton(
+                //                                 onPressed: () {
+                //                                   Navigator.push(context,
+                //                                       MaterialPageRoute(
+                //                                           builder: (context) {
+                //                                     return ChangeRole(
+                //                                         id_user: UserProvider
+                //                                             .getRoles
+                //                                             .data![s]
+                //                                             .users![d]
+                //                                             .id,
+                //                                         name: UserProvider
+                //                                             .getRoles
+                //                                             .data![s]
+                //                                             .users![d]
+                //                                             .name,
+                //                                         id_role: UserProvider
+                //                                             .getRoles
+                //                                             .data![s]
+                //                                             .id);
+                //                                   }));
+                //                                   setState(() {
+                //                                     _searchUser.text = '';
+                //                                     SearchUser = '';
+                //                                   });
+                //                                 },
+                //                                 icon: Icon(Icons.edit),
+                //                               ),
+                //                             ],
+                //                           ),
+                //                         )
+                //                       }
+                //                     }
+                //                   }
+                //                 ],
+                //               ),
+                //             ),
+                //     ),
+                //   );
+                // }
                 if (UserProvider.getRoles.status == ApiStatus.COMPLETED) {
                   return SingleChildScrollView(
                     child: Padding(
@@ -157,14 +248,18 @@ class _ManageSceenState extends State<ManageSceen> {
                                 for (int i = 0;
                                     i < UserProvider.getRoles.data!.length;
                                     i++) ...{
-                                  CategoryExpansionTile(
-                                    subject:
-                                        '${UserProvider.getRoles.data![i].name![0].toUpperCase()}${UserProvider.getRoles.data![i].name!.substring(1)}',
-                                    subTitle:
-                                        '${UserProvider.getRoles.data![i].usersCount}',
-                                    names: UserProvider.getRoles.data![i].users,
-                                    id_role: UserProvider.getRoles.data![i].id,
-                                  )
+                                  if (UserProvider.getRoles.data![i].id !=
+                                      2) // تخطي الدور رقم 2
+                                    CategoryExpansionTile(
+                                      subject:
+                                          '${UserProvider.getRoles.data![i].name![0].toUpperCase()}${UserProvider.getRoles.data![i].name!.substring(1)}',
+                                      subTitle:
+                                          '${UserProvider.getRoles.data![i].usersCount}',
+                                      names:
+                                          UserProvider.getRoles.data![i].users,
+                                      id_role:
+                                          UserProvider.getRoles.data![i].id,
+                                    )
                                 }
                               ],
                             )
@@ -174,58 +269,60 @@ class _ManageSceenState extends State<ManageSceen> {
                                   for (int s = 0;
                                       s < UserProvider.getRoles.data!.length;
                                       s++) ...{
-                                    for (int d = 0;
-                                        d <
-                                            UserProvider.getRoles.data![s]
-                                                .users!.length;
-                                        d++) ...{
-                                      if (UserProvider
-                                          .getRoles.data![s].users![d].name!
-                                          .contains(_searchUser.text)) ...{
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                '${UserProvider.getRoles.data![s].users![d].name}',
-                                                style: TextStyle(
-                                                  fontSize: 18,
+                                    if (UserProvider.getRoles.data![s].id !=
+                                        2) // تخطي الدور رقم 2
+                                      for (int d = 0;
+                                          d <
+                                              UserProvider.getRoles.data![s]
+                                                  .users!.length;
+                                          d++) ...{
+                                        if (UserProvider
+                                            .getRoles.data![s].users![d].name!
+                                            .contains(_searchUser.text)) ...{
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  '${UserProvider.getRoles.data![s].users![d].name}',
+                                                  style: const TextStyle(
+                                                    fontSize: 18,
+                                                  ),
                                                 ),
-                                              ),
-                                              Spacer(),
-                                              IconButton(
-                                                onPressed: () {
-                                                  Navigator.push(context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) {
-                                                    return ChangeRole(
-                                                        id_user: UserProvider
-                                                            .getRoles
-                                                            .data![s]
-                                                            .users![d]
-                                                            .id,
-                                                        name: UserProvider
-                                                            .getRoles
-                                                            .data![s]
-                                                            .users![d]
-                                                            .name,
-                                                        id_role: UserProvider
-                                                            .getRoles
-                                                            .data![s]
-                                                            .id);
-                                                  }));
-                                                  setState(() {
-                                                    _searchUser.text = '';
-                                                    SearchUser = '';
-                                                  });
-                                                },
-                                                icon: Icon(Icons.edit),
-                                              ),
-                                            ],
-                                          ),
-                                        )
+                                                Spacer(),
+                                                IconButton(
+                                                  onPressed: () {
+                                                    Navigator.push(context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) {
+                                                      return ChangeRole(
+                                                          id_user: UserProvider
+                                                              .getRoles
+                                                              .data![s]
+                                                              .users![d]
+                                                              .id,
+                                                          name: UserProvider
+                                                              .getRoles
+                                                              .data![s]
+                                                              .users![d]
+                                                              .name,
+                                                          id_role: UserProvider
+                                                              .getRoles
+                                                              .data![s]
+                                                              .id);
+                                                    }));
+                                                    setState(() {
+                                                      _searchUser.text = '';
+                                                      SearchUser = '';
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons.edit),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        }
                                       }
-                                    }
                                   }
                                 ],
                               ),

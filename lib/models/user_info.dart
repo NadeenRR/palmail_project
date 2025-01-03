@@ -30,7 +30,7 @@ class User {
   String? email;
   dynamic image;
   dynamic emailVerifiedAt;
-  String? roleId;
+  int? roleId;
   String? createdAt;
   String? updatedAt;
   Role? role;

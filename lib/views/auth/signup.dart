@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:palmail_project/views/splah/splash_screen.dart';
+// import 'package:palmailnadeenflutter327/views/splah/splash_screen.dart';
 
 import '../../constant/app_constant.dart';
 import '../../constant/app_string.dart';

@@ -21,9 +21,12 @@ class RoleProvider extends ChangeNotifier {
     try {
       final response = await _roles.FetchAllRoles();
       _roles_users = ApiResponse.completed(response);
+      print('Role: $response');
+      print('_roles_users: $_roles_users');
       notifyListeners();
     } catch (e) {
       _roles_users = ApiResponse.error(e.toString());
+      print('_roles_users: $_roles_users');
       notifyListeners();
     }
   }

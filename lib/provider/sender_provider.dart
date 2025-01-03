@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:palmail_project/controller/senders/allSenders_repositry.dart';
+import '../controller/senders/allSenders_repositry.dart';
 import '../services/api_response.dart';
 
 class SendersProvider extends ChangeNotifier {
@@ -19,6 +19,7 @@ class SendersProvider extends ChangeNotifier {
 
     try {
       final response = await _sendersRep.FetchAllSenders();
+      debugPrint('Response: $response');
       _senders = ApiResponse.completed(response);
       notifyListeners();
     } catch (e) {

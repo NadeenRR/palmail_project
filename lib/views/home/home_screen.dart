@@ -229,12 +229,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                             Consumer<UserProvider>(
                                               builder: (BuildContext context,
                                                   value, Widget? child) {
+                                                    //http://palmail.gazawar.wiki/
                                                 final user = value.getUser;
                                                 final backgroundImage = user
                                                             ?.image !=
                                                         null
                                                     ? CachedNetworkImageProvider(
-                                                        'http://palmail.gazawar.wiki/storage/${user!.image}')
+                                                        'http://palmail.gazawar.wiki/${user!.image}')
                                                     : const AssetImage(
                                                         'assets/images/user.jpg');
 
@@ -262,7 +263,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Widget? child) {
                                         final allEmailStatuses =
                                             value.getStatuses;
-                                        print('allEmailStatuses $allEmailStatuses');
+                                        print(
+                                            'allEmailStatuses $allEmailStatuses');
                                         if (allEmailStatuses != null) {
                                           return GridView.builder(
                                             physics:
@@ -305,9 +307,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         allEmailStatuses[index]
                                                             .color!),
                                                   ),
-                                                  number: int.parse(
+                                                  number:
                                                       allEmailStatuses[index]
-                                                          .mailsCount!),
+                                                          .mailsCount!,
                                                   size: size,
                                                 ),
                                               );
@@ -465,7 +467,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                             final attachment =
                                                                                 mail.attachments![attachmentIndex];
                                                                             final imageUrl =
-                                                                                'https://palmail.gsgtt.tech/storage/${attachment.image}';
+                                                                                'http://palmail.gazawar.wiki/${attachment.image}';
                                                                             return Container(
                                                                               margin: const EdgeInsets.only(right: 8),
                                                                               height: size.height / 20,
@@ -643,11 +645,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Consumer<UserProvider>(
                           builder: (context, value, child) {
                             final userInfo = value.getUser;
-                            print('userInfo $userInfo');
+                            print('userInfo image ${userInfo?.image}');
 
                             final backgroundImage = userInfo?.image != null
                                 ? CachedNetworkImageProvider(
-                                    'http://palmail.gazawar.wiki/storage/${userInfo!.image}')
+                                    'http://palmail.gazawar.wiki/${userInfo!.image}')
                                 : const AssetImage('assets/images/user.jpg');
                             //    if (userInfo != null) {
 

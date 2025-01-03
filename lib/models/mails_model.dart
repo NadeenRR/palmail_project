@@ -4,8 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:palmail_project/models/user_info.dart';
-
+import '../models/user_info.dart';
 
 MailResponse mailResponseFromJson(String str) =>
     MailResponse.fromJson(json.decode(str));
@@ -48,15 +47,15 @@ class Mail {
   int? id;
   String? subject;
   dynamic description;
-  String? senderId;
+  int? senderId;
   String? archiveNumber;
   String? archiveDate;
   String? decision;
-  String? statusId;
-  dynamic finalDecision;
+  int? statusId;
+  String? finalDecision;
   String? createdAt;
   String? updatedAt;
-  String? activitiesCount;
+  int? activitiesCount;
   Sender? sender;
   dynamic status;
   List<Tag>? tags;
@@ -87,15 +86,15 @@ class Mail {
     int? id,
     String? subject,
     dynamic description,
-    String? senderId,
+    int? senderId,
     String? archiveNumber,
     String? archiveDate,
     String? decision,
-    String? statusId,
-    dynamic finalDecision,
+    int? statusId,
+    String? finalDecision,
     String? createdAt,
     String? updatedAt,
-    String? activitiesCount,
+    int? activitiesCount,
     Sender? sender,
     dynamic status,
     List<Tag>? tags,
@@ -181,8 +180,8 @@ class Mail {
 class Activity {
   int? id;
   String? body;
-  String? userId;
-  String? mailId;
+  int? userId;
+  int? mailId;
   dynamic sendNumber;
   dynamic sendDate;
   dynamic sendDestination;
@@ -206,8 +205,8 @@ class Activity {
   Activity copyWith({
     int? id,
     String? body,
-    String? userId,
-    String? mailId,
+    int? userId,
+    int? mailId,
     dynamic sendNumber,
     dynamic sendDate,
     dynamic sendDestination,
@@ -258,7 +257,7 @@ class Activity {
 class Sender {
   int? id;
   String? name;
-  String? categoryId;
+  int? categoryId;
   Category? category;
 
   Sender({
@@ -271,7 +270,7 @@ class Sender {
   Sender copyWith({
     int? id,
     String? name,
-    String? categoryId,
+    int? categoryId,
     Category? category,
   }) =>
       Sender(
@@ -377,7 +376,7 @@ class Attachment {
   int? id;
   String? title;
   String? image;
-  String? mailId;
+  int? mailId;
   String? createdAt;
   String? updatedAt;
 
@@ -394,7 +393,7 @@ class Attachment {
     int? id,
     String? title,
     String? image,
-    String? mailId,
+    int? mailId,
     String? createdAt,
     String? updatedAt,
   }) =>
@@ -427,8 +426,8 @@ class Attachment {
 }
 
 class Pivot {
-  String? mailId;
-  String? tagId;
+  int? mailId;
+  int? tagId;
 
   Pivot({
     this.mailId,
@@ -436,8 +435,8 @@ class Pivot {
   });
 
   Pivot copyWith({
-    String? mailId,
-    String? tagId,
+    int? mailId,
+    int? tagId,
   }) =>
       Pivot(
         mailId: mailId ?? this.mailId,

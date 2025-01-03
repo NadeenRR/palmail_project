@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-
-
 import '../constant/app_constant.dart';
 import '../models/users.dart';
 import '../services/api_response.dart';
@@ -52,19 +50,24 @@ class AuthController {
     });
 
     try {
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         var jsonResponse = jsonDecode(response.body);
         var user = Users.fromJson(jsonResponse);
+        print('user $user');
         SharedPreferencesHelper.saveUserToken('${user.token}');
         _apiResponse = ApiResponse<Users>.completed(user);
+        print('_apiResponse $_apiResponse');
       } else {
         _apiResponse =
             ApiResponse<Users>.error('Email address is already registered.');
+        print('_apiResponse $_apiResponse');
       }
     } catch (e) {
       _apiResponse =
           ApiResponse<Users>.error('Email address is already registered.');
+      print('_apiResponse $_apiResponse');
     }
+    print(_apiResponse);
 
     return _apiResponse;
   }

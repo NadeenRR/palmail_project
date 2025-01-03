@@ -276,7 +276,7 @@ class _MailOfTagsState extends State<MailOfTags> {
                                           .data![i]
                                           .attachments![attachmentIndex];
                                       final imageUrl =
-                                          'https://palmail.gsgtt.tech/storage/${attachment?.image}';
+                                          'http://palmail.gazawar.wiki/${attachment.image}';
                                       return Container(
                                         margin: const EdgeInsets.only(right: 8),
                                         height: size.height / 20,

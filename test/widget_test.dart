@@ -1,30 +1,89 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:palmail_project/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  group('Archive Number Validation', () {
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    test('Invalid mail number (wrong format) should fail', () {
+      const mailNumber = '2024-1234';
+      final isValidMailNumber = RegExp(r'^\d{4}/\d{4}$').hasMatch(mailNumber);
+      expect(isValidMailNumber, false);
+    });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    test('Invalid mail number (missing year) should fail', () {
+      const mailNumber = '/1234';
+      final isValidMailNumber = RegExp(r'^\d{4}/\d{4}$').hasMatch(mailNumber);
+      expect(isValidMailNumber, false);
+    });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    test('Invalid mail number (less than 4 digits after /) should fail', () {
+      const mailNumber = '2024/123';
+      final isValidMailNumber = RegExp(r'^\d{4}/\d{4}$').hasMatch(mailNumber);
+      expect(isValidMailNumber, false);
+    });
+
+    test('Invalid mail number (extra characters) should fail', () {
+      const mailNumber = '2024/12345';
+      final isValidMailNumber = RegExp(r'^\d{4}/\d{4}$').hasMatch(mailNumber);
+      expect(isValidMailNumber, false);
+    });
   });
 }
+
+
+
+// void main() {
+//   group('Password Validation', () {
+//     test('Name with less than 3 letters should fail', () {
+//       const name = 'Nr';
+//       expect(name.length > 3, false);
+//     });
+
+//     test('Name with 3 or more letters should pass', () {
+//       const name = 'Nadeen';
+//       expect(name.length >= 3, true);
+//     });
+//   });
+// }
+
+
+/*
+
+    test('Valid email should pass', () {
+      const email = 'nadeen@gmail.com';
+      final isValidEmail =
+          RegExp(r'^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$')
+              .hasMatch(email);
+      expect(isValidEmail, true);
+    });
+
+    test('Invalid email should fail', () {
+      const email = 'nadeengmail.com';
+      final isValidEmail =
+          RegExp(r'^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$')
+              .hasMatch(email);
+      expect(isValidEmail, false);
+    });
+
+    test('Name with less than 3 letters should fail', () {
+      const name = 'Nr';
+      expect(name.length > 3, false);
+    });
+
+    test('Name with 3 or more letters should pass', () {
+      const name = 'Nadeen';
+      expect(name.length > 3, true);
+    });
+
+    test('Password and confirm password should match', () {
+      const password = 'nadeen1234';
+      const confirmPassword = 'nadeen1234';
+      expect(password == confirmPassword, true);
+    });
+
+    test('Password and confirm password mismatch should fail', () {
+      const password = '123456n';
+      const confirmPassword = '123456a';
+      expect(password == confirmPassword, false);
+    });
+*/

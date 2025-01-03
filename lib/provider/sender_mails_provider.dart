@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:palmail_project/models/mail_sender_model.dart';
+import '../models/mail_sender_model.dart';
 
 import '../controller/senders/sender_mails_repo.dart';
 import '../services/api_response.dart';

@@ -64,10 +64,10 @@ class _sendersViewState extends State<sendersView> {
               },
             ),
             title: Text(
-              AppString.search.tr(),
+              AppString.senderMails.tr(),
               style: const TextStyle(
                 color: Color(0xff272727),
-                fontSize: 24,
+                fontSize: 22,
               ),
             ),
             actions: [

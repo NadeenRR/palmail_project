@@ -81,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                     final backgroundImage = user?.image != null
                         ? CachedNetworkImageProvider(
-                            'https://palmail.gsgtt.tech/storage/${user!.image}')
+                            'http://palmail.gazawar.wiki/${user!.image}')
                         : const AssetImage('assets/images/user.jpg');
 
                     return Column(

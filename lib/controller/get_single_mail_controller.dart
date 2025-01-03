@@ -1,6 +1,6 @@
-import 'package:palmail_project/models/single_model.dart';
-import 'package:palmail_project/services/api_helper.dart';
-import 'package:palmail_project/services/shared_pref_helper.dart';
+import '../models/single_model.dart';
+import '../services/api_helper.dart';
+import '../services/shared_pref_helper.dart';
 
 class SingleMailRepository {
   final ApiBaseHelper _helper = ApiBaseHelper();

@@ -40,7 +40,7 @@ class Role {
   String? name;
   DateTime? createdAt;
   DateTime? updatedAt;
-  String? usersCount;
+  int? usersCount;
   List<User>? users;
 
   Role({
@@ -57,7 +57,7 @@ class Role {
     String? name,
     DateTime? createdAt,
     DateTime? updatedAt,
-    String? usersCount,
+    int? usersCount,
     List<User>? users,
   }) =>
       Role(
@@ -102,7 +102,7 @@ class User {
   String? email;
   String? image;
   dynamic emailVerifiedAt;
-  String? roleId;
+  int? roleId;
   DateTime? createdAt;
   DateTime? updatedAt;
 
@@ -123,7 +123,7 @@ class User {
     String? email,
     String? image,
     dynamic emailVerifiedAt,
-    String? roleId,
+    int? roleId,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) =>

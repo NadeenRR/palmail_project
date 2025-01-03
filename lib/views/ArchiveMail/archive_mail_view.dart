@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:palmail_project/views/details_feature/shmmier_loading.dart';
+import '../../views/details_feature/shmmier_loading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../constant/app_constant.dart';
 import '../../constant/app_string.dart';
@@ -48,6 +48,12 @@ class _ArchivedMailScreenState extends State<ArchivedMailScreen> {
           title: Text(
             AppString.archivedMails.tr(),
             style: AppConstant().titleStyle,
+          ),
+           leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back_ios),
           ),
           actions: [
             IconButton(
@@ -132,7 +138,7 @@ class _ArchivedMailScreenState extends State<ArchivedMailScreen> {
                                 final attachment =
                                     mail.attachments![attachmentIndex];
                                 final imageUrl =
-                                    'https://palmail.gsgtt.tech/storage/${attachment.image}';
+                                    'http://palmail.gazawar.wiki/${attachment.image}';
                                 return Container(
                                   margin: const EdgeInsets.only(right: 8),
                                   height: size.height / 20,

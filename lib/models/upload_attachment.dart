@@ -45,7 +45,7 @@ class UploadAttachment {
 class Attachment {
   String? title;
   String? image;
-  String? mailId;
+  int? mailId;
   DateTime? updatedAt;
   DateTime? createdAt;
   int? id;
@@ -62,7 +62,7 @@ class Attachment {
   Attachment copyWith({
     String? title,
     String? image,
-    String? mailId,
+    int? mailId,
     DateTime? updatedAt,
     DateTime? createdAt,
     int? id,

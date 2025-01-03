@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:palmail_project/models/all_categorey.dart';
+import '../models/all_categorey.dart';
 
 import '../controller/Categorey/all_categorey_cont.dart';
 import '../services/api_response.dart';

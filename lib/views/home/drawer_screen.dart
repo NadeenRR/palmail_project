@@ -80,12 +80,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   },
                   title: AppString.profile.tr(),
                 ),
-                SlidMenuTitle(
-                  icon: CupertinoIcons.create,
-                  press: () {
-                    Navigator.pushNamed(context, sendersView.id);
-                  },
-                  title: AppString.senders.tr(),
+                Visibility(
+                  visible: userId == 4 || userId == 3,
+                  child: SlidMenuTitle(
+                    icon: CupertinoIcons.create,
+                    press: () {
+                      Navigator.pushNamed(context, sendersView.id);
+                    },
+                    title: AppString.senders.tr(),
+                  ),
                 ),
                 Visibility(
                   visible: userId == 4,
@@ -100,15 +103,18 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     title: AppString.manageUser.tr(),
                   ),
                 ),
-                SlidMenuTitle(
-                  icon: Icons.archive,
-                  press: () {
-                    Navigator.pushNamed(
-                      context,
-                      ArchivedMailScreen.id,
-                    );
-                  },
-                  title: AppString.archive.tr(),
+                Visibility(
+                  visible: userId == 4 || userId == 3,
+                  child: SlidMenuTitle(
+                    icon: Icons.archive,
+                    press: () {
+                      Navigator.pushNamed(
+                        context,
+                        ArchivedMailScreen.id,
+                      );
+                    },
+                    title: AppString.archive.tr(),
+                  ),
                 ),
               ],
             ),

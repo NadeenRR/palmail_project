@@ -3,6 +3,10 @@ import 'package:palmail_project/provider/search_provider.dart';
 import 'package:palmail_project/provider/single_mail_provider.dart';
 import 'package:palmail_project/provider/statuses_provider.dart';
 import 'package:palmail_project/services/mange_language.dart';
+// import 'package:palmailnadeenflutter327/provider/search_provider.dart';
+// import 'package:palmailnadeenflutter327/provider/single_mail_provider.dart';
+// import 'package:palmailnadeenflutter327/provider/statuses_provider.dart';
+// import 'package:palmailnadeenflutter327/services/mange_language.dart';
 
 import 'package:provider/provider.dart';
 
@@ -119,7 +123,7 @@ class MyApp extends StatelessWidget {
           AuthScreen.id: (context) => const AuthScreen(),
           HomeScreen.id: (context) => const HomeScreen(),
           SplashScreen.id: (context) => const SplashScreen(),
-          DetailsScreen.id: (context) =>const  DetailsScreen(),
+          DetailsScreen.id: (context) => const DetailsScreen(),
           SearchScreen.id: (context) => const SearchScreen(),
           ProfileScreen.id: (context) => const ProfileScreen(),
           ArchivedMailScreen.id: (context) => const ArchivedMailScreen(),

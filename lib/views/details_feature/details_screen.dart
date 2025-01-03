@@ -2,6 +2,8 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:palmail_project/views/details_feature/shmmier_loading.dart';
+import 'package:palmail_project/widgets/details_widget/my_container.dart';
 import '../../models/user_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +15,10 @@ import '../../provider/tag_provider.dart';
 import '../../views/details_feature/status_page.dart';
 import '../../views/details_feature/tag_selected.dart';
 import 'package:motion_toast/motion_toast.dart';
-import 'package:palmail_project/views/details_feature/shmmier_loading.dart';
+// import 'package:palmailnadeenflutter327/views/details_feature/shmmier_loading.dart';
 import '../../views/details_feature/status_page.dart';
-import 'package:palmail_project/views/details_feature/tag_selected.dart';
-import 'package:palmail_project/widgets/details_widget/my_container.dart';
+// import 'package:palmailnadeenflutter327/views/details_feature/tag_selected.dart';
+// import 'package:palmailnadeenflutter327/widgets/details_widget/my_container.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -109,14 +111,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
           key: globalKey,
           child: Consumer<SingleMailProvider>(
             builder: (_, mailProvider, __) {
+              debugPrint('Mail id: ${mailProvider.currentMailId}');
+              debugPrint(
+                  'mailProvider.getMail.status ${mailProvider.getMail.status}');
               if (mailProvider.getMail.status == ApiStatus.LOADING) {
                 return ShimmerLoading.detailsPageShimmer();
               }
               if (mailProvider.getMail.status == ApiStatus.ERROR) {
+                debugPrint('Error: ${mailProvider.getMail.message}');
                 return Center(
-                  child: Text('${mailProvider.getMail.message}'),
+                  child: Text(
+                    '${mailProvider.getMail.message}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
                 );
               }
+
               Mail? mail = mailProvider.getMail.data;
               List<int?>? tagsEmpty = [];
               bool isComp = inboxSelect[3] == 'Completed';
@@ -271,7 +281,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(mail.sender!.category!.name ?? 'N/A',
+                                      Text(mail.sender?.category?.name ?? 'N/A',
                                           style:
                                               AppConstant().organiztionStyle),
                                       Text(
@@ -722,7 +732,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       ListTile(
                                         leading: CircleAvatar(
                                           backgroundImage: NetworkImage(
-                                            'https://palmail.gsgtt.tech/storage/${activity.user?.image}',
+                                            'http://palmail.gazawar.wiki/${activity.user?.image}',
                                           ),
                                           radius: 16,
                                         ),
@@ -845,7 +855,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     final tempFile = File(tempFilePath);
     await tempFile.writeAsBytes(pdfData);
 
-    await Share.shareFiles([tempFilePath], text: 'Sharing PDF');
+    await Share.shareXFiles([XFile(tempFilePath)], text: 'Sharing PDF');
   }
 
   void _showCustomSnackBar(BuildContext context) {

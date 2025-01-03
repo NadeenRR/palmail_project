@@ -41,10 +41,10 @@ class MailSenderlResponseSender {
   String? name;
   String? mobile;
   String? address;
-  String? categoryId;
+  int? categoryId;
   String? createdAt;
   String? updatedAt;
-  String? mailsCount;
+  int? mailsCount;
   PurpleCategory? category;
   List<Mail>? mails;
 
@@ -66,10 +66,10 @@ class MailSenderlResponseSender {
     String? name,
     String? mobile,
     String? address,
-    String? categoryId,
+    int? categoryId,
     String? createdAt,
     String? updatedAt,
-    String? mailsCount,
+    int? mailsCount,
     PurpleCategory? category,
     List<Mail>? mails,
   }) =>
@@ -165,11 +165,11 @@ class Mail {
   int? id;
   String? subject;
   dynamic description;
-  String? senderId;
+  int? senderId;
   String? archiveNumber;
   String? archiveDate;
   dynamic decision;
-  String? statusId;
+  int? statusId;
   dynamic finalDecision;
   String? createdAt;
   String? updatedAt;
@@ -202,11 +202,11 @@ class Mail {
           {int? id,
           String? subject,
           dynamic description,
-          String? senderId,
+          int? senderId,
           String? archiveNumber,
           String? archiveDate,
           dynamic decision,
-          String? statusId,
+          int? statusId,
           dynamic finalDecision,
           String? createdAt,
           String? updatedAt,
@@ -293,7 +293,7 @@ class MailSender {
   String? name;
   String? mobile;
   String? address;
-  String? categoryId;
+  int? categoryId;
   String? createdAt;
   String? updatedAt;
   FluffyCategory? category;
@@ -314,7 +314,7 @@ class MailSender {
     String? name,
     String? mobile,
     String? address,
-    String? categoryId,
+    int? categoryId,
     String? createdAt,
     String? updatedAt,
     FluffyCategory? category,
@@ -358,8 +358,8 @@ class MailSender {
 class Activity {
   int? id;
   String? body;
-  String? userId;
-  String? mailId;
+  int? userId;
+  int? mailId;
   dynamic sendNumber;
   dynamic sendDate;
   dynamic sendDestination;
@@ -411,7 +411,7 @@ class Attachment {
   int? id;
   String? title;
   String? image;
-  String? mailId;
+  int? mailId;
   String? createdAt;
   String? updatedAt;
 
@@ -449,7 +449,7 @@ class User {
   String? email;
   String? image;
   String? emailVerifiedAt;
-  String? roleId;
+  int? roleId;
   String? createdAt;
   String? updatedAt;
 
@@ -584,8 +584,8 @@ class Tag {
 }
 
 class Pivot {
-  String? mailId;
-  String? tagId;
+  int? mailId;
+  int? tagId;
 
   Pivot({
     this.mailId,
